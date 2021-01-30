@@ -27,31 +27,14 @@ func _physics_process(delta: float) -> void:
 			$Sprite.set_flip_h( true )
 		else:
 			$Sprite.set_flip_h( false )
+			
 		if is_on_floor():
 			$AnimationPlayer.play("Run_right")
 		else:
-			# Animation set up to prioritize walk left/right over up/down when walking diagonally UwU
 			$AnimationPlayer.play("Jump_right")
 			
 	else:
 		$AnimationPlayer.play("Idle_right")
-	
-#	print(_velocity)
-#	print(animationState)
-#	if _velocity != Vector2.ZERO:
-#		# Set blend position of each node of the animation tree 
-#		# to be equal to the input vector to play the correct animation OwO
-#		animationTree.set("parameters/Idle/blend_position", direction.x)
-#		animationTree.set("parameters/Run/blend_position", direction.x)
-#
-#		if is_on_floor():
-#			animationState.travel("Run")
-#		else:
-#			animationTree.set("parameters/Jump/blend_position", _velocity.y)
-#			# Animation set up to prioritize walk left/right over up/down when walking diagonally UwU
-#			animationState.travel("Jump")
-#	else:
-#		animationState.travel("Idle")
 
 
 func get_direction() -> Vector2:
