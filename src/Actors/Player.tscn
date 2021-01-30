@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Player_sheet.png" type="Texture" id=2]
@@ -15,7 +15,7 @@ extents = Vector2( 45.6478, 41.7715 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 48, 8 )
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=5]
 resource_name = "Hurt_left"
 length = 0.6
 tracks/0/type = "value"
@@ -31,8 +31,7 @@ tracks/0/keys = {
 "values": [ 12, 14, 12, 14, 12, 14 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "Hurt_right"
+[sub_resource type="Animation" id=6]
 length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -47,7 +46,7 @@ tracks/0/keys = {
 "values": [ 1, 0, 1, 0, 1, 0 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=7]
 resource_name = "Idle_left"
 length = 0.6
 loop = true
@@ -64,8 +63,7 @@ tracks/0/keys = {
 "values": [ 16, 17 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "Idle_right"
+[sub_resource type="Animation" id=8]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -81,7 +79,7 @@ tracks/0/keys = {
 "values": [ 3, 4 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=9]
 resource_name = "Jump_left"
 length = 0.6
 loop = true
@@ -98,8 +96,7 @@ tracks/0/keys = {
 "values": [ 20, 19, 18 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "Jump_right"
+[sub_resource type="Animation" id=10]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -115,7 +112,7 @@ tracks/0/keys = {
 "values": [ 6, 7, 8 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=11]
 resource_name = "Run_left"
 length = 0.6
 loop = true
@@ -132,8 +129,7 @@ tracks/0/keys = {
 "values": [ 23, 22, 21 ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "Run_right"
+[sub_resource type="Animation" id=12]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -148,6 +144,66 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 9, 10, 11 ]
 }
+
+[sub_resource type="AnimationNodeAnimation" id=40]
+animation = "Idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id=41]
+animation = "Idle_right"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id=42]
+blend_point_0/node = SubResource( 40 )
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource( 41 )
+blend_point_1/pos = 1.0
+
+[sub_resource type="AnimationNodeAnimation" id=56]
+animation = "Jump_left"
+
+[sub_resource type="AnimationNodeAnimation" id=57]
+animation = "Jump_right"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id=44]
+blend_point_0/node = SubResource( 56 )
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource( 57 )
+blend_point_1/pos = 1.0
+
+[sub_resource type="AnimationNodeAnimation" id=45]
+animation = "Run_left"
+
+[sub_resource type="AnimationNodeAnimation" id=46]
+animation = "Run_right"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id=47]
+blend_point_0/node = SubResource( 45 )
+blend_point_0/pos = -0.5
+blend_point_1/node = SubResource( 46 )
+blend_point_1/pos = 0.5
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=54]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=55]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=58]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=59]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=60]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=61]
+
+[sub_resource type="AnimationNodeStateMachine" id=38]
+states/Idle/node = SubResource( 42 )
+states/Idle/position = Vector2( 116, 113 )
+states/Jump/node = SubResource( 44 )
+states/Jump/position = Vector2( 305, 209 )
+states/Run/node = SubResource( 47 )
+states/Run/position = Vector2( 305, 50 )
+transitions = [ "Run", "Jump", SubResource( 54 ), "Jump", "Run", SubResource( 55 ), "Idle", "Run", SubResource( 58 ), "Run", "Idle", SubResource( 59 ), "Idle", "Jump", SubResource( 60 ), "Jump", "Idle", SubResource( 61 ) ]
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=39]
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 4
@@ -172,7 +228,7 @@ texture = ExtResource( 2 )
 offset = Vector2( 0, -20 )
 vframes = 8
 hframes = 3
-frame = 23
+frame = 4
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
 visible = false
@@ -203,13 +259,22 @@ modulate = Color( 0.337255, 0.223529, 1, 1 )
 shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Hurt_left = SubResource( 11 )
-anims/Hurt_right = SubResource( 5 )
-anims/Idle_left = SubResource( 12 )
-anims/Idle_right = SubResource( 6 )
-anims/Jump_left = SubResource( 13 )
-anims/Jump_right = SubResource( 7 )
-anims/Run_left = SubResource( 14 )
-anims/Run_right = SubResource( 8 )
+autoplay = "Idle_right"
+anims/Hurt_left = SubResource( 5 )
+anims/Hurt_right = SubResource( 6 )
+anims/Idle_left = SubResource( 7 )
+anims/Idle_right = SubResource( 8 )
+anims/Jump_left = SubResource( 9 )
+anims/Jump_right = SubResource( 10 )
+anims/Run_left = SubResource( 11 )
+anims/Run_right = SubResource( 12 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 38 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 39 )
+parameters/Idle/blend_position = -0.00145561
+parameters/Jump/blend_position = Vector2( 0, 0 )
+parameters/Run/blend_position = Vector2( 0, 0 )
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
 [connection signal="area_entered" from="StompDetector" to="." method="_on_StompDetector_area_entered"]
