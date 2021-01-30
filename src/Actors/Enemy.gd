@@ -9,10 +9,14 @@ export var score: = 100
 func _ready() -> void:
 	set_physics_process(false)
 	_velocity.x = -speed.x
+	$AnimationPlayer.play("Run")
 
 
 func _physics_process(delta: float) -> void:
-	_velocity.x *= -1 if is_on_wall() else 1
+	if is_on_wall():
+		_velocity.x *= -1
+		$Sprite.set_flip_h(!$Sprite.is_flipped_h())
+		
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
 
 
@@ -23,5 +27,13 @@ func _on_StompArea2D_area_entered(area: Area2D) -> void:
 
 
 func die() -> void:
+	$AnimationPlayer.play("Hit")
+	$CollisionShape2D.disabled = true
+	$StompArea2D/CollisionShape2D.disabled = true
+	_velocity.x = 0
 	PlayerData.score += score
-	queue_free()
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if $AnimationPlayer.assigned_animation == "Hit":
+		queue_free()
+	pass # Replace with function body.
