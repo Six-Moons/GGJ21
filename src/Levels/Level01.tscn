@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=2]
@@ -6,16 +6,56 @@
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Levels/Level02.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/fondo 3.png" type="Texture" id=7]
 [ext_resource path="res://src/Actors/Marcianito.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Actors/Patapon.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Actors/Pulpo.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/fondo 1.png" type="Texture" id=11]
+[ext_resource path="res://assets/fondo 2.png" type="Texture" id=12]
 
 [node name="Level01" type="Node2D"]
 
-[node name="BackgroundLayer" type="CanvasLayer" parent="."]
-layer = -1
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="BackgroundLayer"]
+[node name="Cerros" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.98, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Cerros"]
+position = Vector2( 29.108, 304.185 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Edificios atras" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.96, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Edificios atras"]
+position = Vector2( 24.1937, 310.54 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Edificios Frente" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.87, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Edificios Frente"]
+position = Vector2( 66.4634, 310.162 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+layer = 3
+follow_viewport_enable = true
+
+[node name="TileMap" type="TileMap" parent="CanvasLayer3"]
+tile_set = ExtResource( 3 )
+collision_layer = 4
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 37, 0, 0, 65536, 0, 0, 65573, 0, 0, 131072, 0, 0, 131109, 0, 0, 196608, 0, 0, 196645, 0, 0, 262144, 0, 0, 262181, 0, 0, 327680, 0, 0, 327717, 0, 0, 393216, 0, 0, 393253, 0, 0, 458752, 0, 0, 458789, 0, 0, 524288, 0, 0, 524325, 0, 0, 589824, 0, 0, 589861, 0, 0, 655360, 0, 0, 655372, 0, 0, 655382, 0, 0, 655397, 0, 0, 720896, 0, 0, 720907, 0, 0, 720908, 0, 0, 720918, 0, 0, 720919, 0, 0, 720933, 0, 0, 786432, 0, 0, 786442, 0, 0, 786444, 0, 0, 786454, 0, 0, 786456, 0, 0, 786469, 0, 0, 851968, 0, 0, 851977, 0, 0, 851980, 0, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 0, 0, 851993, 0, 0, 852005, 0, 0, 917504, 0, 0, 917512, 0, 0, 917541, 0, 0, 983040, 0, 0, 983077, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0, 1048607, 0, 0, 1048608, 0, 0, 1048609, 0, 0, 1048610, 0, 0, 1048611, 0, 0, 1048612, 0, 0, 1048613, 0, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer3"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
@@ -29,21 +69,14 @@ __meta__ = {
 
 [node name="UserInterface" parent="InterfaceLayer" instance=ExtResource( 2 )]
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 3 )
-collision_layer = 4
-collision_mask = 0
-format = 1
-tile_data = PoolIntArray( 0, 0, 0, 37, 0, 0, 65536, 0, 0, 65573, 0, 0, 131072, 0, 0, 131109, 0, 0, 196608, 0, 0, 196645, 0, 0, 262144, 0, 0, 262181, 0, 0, 327680, 0, 0, 327717, 0, 0, 393216, 0, 0, 393253, 0, 0, 458752, 0, 0, 458789, 0, 0, 524288, 0, 0, 524325, 0, 0, 589824, 0, 0, 589861, 0, 0, 655360, 0, 0, 655372, 0, 0, 655382, 0, 0, 655397, 0, 0, 720896, 0, 0, 720907, 0, 0, 720908, 0, 0, 720918, 0, 0, 720919, 0, 0, 720933, 0, 0, 786432, 0, 0, 786442, 0, 0, 786444, 0, 0, 786454, 0, 0, 786456, 0, 0, 786469, 0, 0, 851968, 0, 0, 851977, 0, 0, 851980, 0, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 0, 0, 851993, 0, 0, 852005, 0, 0, 917504, 0, 0, 917512, 0, 0, 917541, 0, 0, 983040, 0, 0, 983077, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0, 1048607, 0, 0, 1048608, 0, 0, 1048609, 0, 0, 1048610, 0, 0, 1048611, 0, 0, 1048612, 0, 0, 1048613, 0, 0 )
-
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 200, 760 )
+position = Vector2( 269.131, 763.638 )
 
 [node name="Camera2D" parent="Player" index="0"]
 limit_right = 7760
 
 [node name="Portal2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2014.58, 640.542 )
+position = Vector2( 2075.87, 853.923 )
 next_scene = ExtResource( 6 )
 
 [node name="Coins" type="Node2D" parent="."]
