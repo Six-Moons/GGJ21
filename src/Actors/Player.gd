@@ -1,13 +1,9 @@
 extends Actor
 
-
 export var stomp_impulse: = 600.0
-onready var animationTree = $AnimationTree
-onready var animationState = animationTree.get("parameters/playback")
 
 func _on_StompDetector_area_entered(area: Area2D) -> void:
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
-
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
 	die()
@@ -21,35 +17,36 @@ func _physics_process(delta: float) -> void:
 	_velocity = move_and_slide_with_snap(
 		_velocity, snap, FLOOR_NORMAL, true
 	)
-	
-	if direction != Vector2.ZERO:
-		if direction.x < 0:
-			$Sprite.set_flip_h( true )
-		else:
-			$Sprite.set_flip_h( false )
+
+	if is_on_floor():
+		if direction.x != 0:
+			if direction.x < 0:
+				$Sprite.set_flip_h( true )
+			else:
+				$Sprite.set_flip_h( false )
 			
-		if is_on_floor():
 			$AnimationPlayer.play("Run_right")
 		else:
-			$AnimationPlayer.play("Jump_right")
-			
+			$AnimationPlayer.play("Idle_right")
 	else:
-		$AnimationPlayer.play("Idle_right")
-
+		if speed.y > 0:
+			$AnimationPlayer.play("Jump_right")
+		else:
+			$AnimationPlayer.play("Fall")
 
 func get_direction() -> Vector2:
 	return Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		-Input.get_action_strength("jump") if is_on_floor() and Input.is_action_just_pressed("jump") else 0.0
 	)
-
-
+#calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 func calculate_move_velocity(
 		linear_velocity: Vector2,
 		direction: Vector2,
 		speed: Vector2,
 		is_jump_interrupted: bool
 	) -> Vector2:
+	print (speed.x)
 	var velocity: = linear_velocity
 	velocity.x = speed.x * direction.x
 	if direction.y != 0.0:

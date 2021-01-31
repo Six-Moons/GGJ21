@@ -30,8 +30,8 @@ PlayerData="*res://src/Autoload/PlayerData.tscn"
 
 [display]
 
-window/size/width=1920
-window/size/height=1080
+window/size/width=234
+window/size/height=416
 window/size/always_on_top=true
 window/size/test_width=1280
 window/size/test_height=720

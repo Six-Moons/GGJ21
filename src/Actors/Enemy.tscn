@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Actors/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/enemy.png" type="Texture" id=2]
@@ -9,23 +9,6 @@ extents = Vector2( 20.25, 20.25 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 30.5, 9.75 )
-
-[sub_resource type="Animation" id=4]
-resource_name = "Run"
-length = 0.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.3, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2 ]
-}
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 2
@@ -62,5 +45,4 @@ physics_process_parent = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 method_call_mode = 1
-anims/Run = SubResource( 4 )
 [connection signal="area_entered" from="StompArea2D" to="." method="_on_StompArea2D_area_entered"]

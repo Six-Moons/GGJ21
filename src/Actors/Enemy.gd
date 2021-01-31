@@ -1,10 +1,8 @@
 extends Actor
 
-
 onready var stomp_area: Area2D = $StompArea2D
 
 export var score: = 100
-
 
 func _ready() -> void:
 	set_physics_process(false)
