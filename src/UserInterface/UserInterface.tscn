@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/UserInterface/UserInterface.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/UserInterface/RetryButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UserInterface/SceneChangeButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UserInterface/Health.tscn" type="PackedScene" id=7]
 
 [node name="UserInterface" type="Control"]
 pause_mode = 2
@@ -13,6 +14,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Score" type="Label" parent="."]
 anchor_left = 1.0
@@ -22,6 +26,27 @@ margin_bottom = 18.0
 text = "Score: %s"
 align = 2
 valign = 1
+
+[node name="Lives" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" parent="Lives" instance=ExtResource( 7 )]
+margin_right = 18.0
+margin_bottom = 40.0
+
+[node name="Health2" parent="Lives" instance=ExtResource( 7 )]
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Health3" parent="Lives" instance=ExtResource( 7 )]
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 40.0
 
 [node name="PauseOverlay" type="ColorRect" parent="."]
 visible = false

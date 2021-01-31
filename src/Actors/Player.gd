@@ -1,15 +1,17 @@
 extends Actor
 
+signal hit
+
 export var stomp_impulse: = 600.0
 export var lives := 2
 var hurt := false
 
 func _on_StompDetector_area_entered(area: Area2D) -> void:
-	if !area.get_parent().is_dead():
-		_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
+	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
 	if !body.is_dead():
+		emit_signal("hit", lives)
 		if lives > 0:
 			lives -= 1
 			hurt = true
@@ -39,7 +41,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			$AnimationPlayer.play("Idle_right")
 	else:
-		if speed.y > 0:
+		if _velocity.y > 0:
 			$AnimationPlayer.play("Jump_right")
 		else:
 			$AnimationPlayer.play("Fall")
