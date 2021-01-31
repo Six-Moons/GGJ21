@@ -6,7 +6,8 @@ func _on_StompDetector_area_entered(area: Area2D) -> void:
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
-	die()
+	if !body.is_dead():
+		die()
 
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
@@ -46,7 +47,6 @@ func calculate_move_velocity(
 		speed: Vector2,
 		is_jump_interrupted: bool
 	) -> Vector2:
-	print (speed.x)
 	var velocity: = linear_velocity
 	velocity.x = speed.x * direction.x
 	if direction.y != 0.0:

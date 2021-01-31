@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Levels/Level02.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Actors/Marcianito.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Actors/Patapon.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Actors/Pulpo.tscn" type="PackedScene" id=10]
@@ -35,7 +34,7 @@ tile_set = ExtResource( 3 )
 collision_layer = 4
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 0, 0, 0, 120, 0, 0, 65536, 0, 0, 65656, 0, 0, 131072, 0, 0, 131192, 0, 0, 196608, 0, 0, 196728, 0, 0, 262144, 0, 0, 262264, 0, 0, 327680, 0, 0, 327800, 0, 0, 393216, 0, 0, 393336, 0, 0, 458752, 0, 0, 458872, 0, 0, 524288, 0, 0, 524408, 0, 0, 589824, 0, 0, 589944, 0, 0, 655360, 0, 0, 655480, 0, 0, 720896, 0, 0, 721016, 0, 0, 786432, 0, 0, 786552, 0, 0, 851968, 0, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 852088, 0, 0, 917504, 0, 0, 917624, 0, 0, 983040, 0, 0, 983160, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0, 1048607, 0, 0, 1048608, 0, 0, 1048609, 0, 0, 1048610, 0, 0, 1048611, 0, 0, 1048612, 0, 0, 1048613, 0, 0, 1048614, 0, 0, 1048615, 0, 0, 1048616, 0, 0, 1048617, 0, 0, 1048618, 0, 0, 1048619, 0, 0, 1048620, 0, 0, 1048621, 0, 0, 1048622, 0, 0, 1048623, 0, 0, 1048624, 0, 0, 1048625, 0, 0, 1048626, 0, 0, 1048627, 0, 0, 1048628, 0, 0, 1048629, 0, 0, 1048630, 0, 0, 1048631, 0, 0, 1048632, 0, 0, 1048633, 0, 0, 1048634, 0, 0, 1048635, 0, 0, 1048636, 0, 0, 1048637, 0, 0, 1048638, 0, 0, 1048639, 0, 0, 1048640, 0, 0, 1048641, 0, 0, 1048642, 0, 0, 1048643, 0, 0, 1048644, 0, 0, 1048645, 0, 0, 1048646, 0, 0, 1048647, 0, 0, 1048648, 0, 0, 1048649, 0, 0, 1048650, 0, 0, 1048651, 0, 0, 1048652, 0, 0, 1048653, 0, 0, 1048654, 0, 0, 1048655, 0, 0, 1048656, 0, 0, 1048657, 0, 0, 1048658, 0, 0, 1048659, 0, 0, 1048660, 0, 0, 1048661, 0, 0, 1048662, 0, 0, 1048663, 0, 0, 1048664, 0, 0, 1048665, 0, 0, 1048666, 0, 0, 1048667, 0, 0, 1048668, 0, 0, 1048669, 0, 0, 1048670, 0, 0, 1048671, 0, 0, 1048672, 0, 0, 1048673, 0, 0, 1048674, 0, 0, 1048675, 0, 0, 1048676, 0, 0, 1048677, 0, 0, 1048678, 0, 0, 1048679, 0, 0, 1048680, 0, 0, 1048681, 0, 0, 1048682, 0, 0, 1048683, 0, 0, 1048684, 0, 0, 1048685, 0, 0, 1048686, 0, 0, 1048687, 0, 0, 1048688, 0, 0, 1048689, 0, 0, 1048690, 0, 0, 1048691, 0, 0, 1048692, 0, 0, 1048693, 0, 0, 1048694, 0, 0, 1048695, 0, 0, 1048696, 0, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 37, 0, 0, 65536, 0, 0, 65573, 0, 0, 131072, 0, 0, 131109, 0, 0, 196608, 0, 0, 196645, 0, 0, 262144, 0, 0, 262181, 0, 0, 327680, 0, 0, 327717, 0, 0, 393216, 0, 0, 393253, 0, 0, 458752, 0, 0, 458789, 0, 0, 524288, 0, 0, 524325, 0, 0, 589824, 0, 0, 589861, 0, 0, 655360, 0, 0, 655372, 0, 0, 655382, 0, 0, 655397, 0, 0, 720896, 0, 0, 720907, 0, 0, 720908, 0, 0, 720918, 0, 0, 720919, 0, 0, 720933, 0, 0, 786432, 0, 0, 786442, 0, 0, 786444, 0, 0, 786454, 0, 0, 786456, 0, 0, 786469, 0, 0, 851968, 0, 0, 851977, 0, 0, 851980, 0, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 0, 0, 851993, 0, 0, 852005, 0, 0, 917504, 0, 0, 917512, 0, 0, 917541, 0, 0, 983040, 0, 0, 983077, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0, 1048607, 0, 0, 1048608, 0, 0, 1048609, 0, 0, 1048610, 0, 0, 1048611, 0, 0, 1048612, 0, 0, 1048613, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 200, 760 )
@@ -44,82 +43,10 @@ position = Vector2( 200, 760 )
 limit_right = 7760
 
 [node name="Portal2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 7410, 160 )
+position = Vector2( 2014.58, 640.542 )
 next_scene = ExtResource( 6 )
 
 [node name="Coins" type="Node2D" parent="."]
-
-[node name="Coin" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1260, 580 )
-
-[node name="Coin2" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1370, 580 )
-
-[node name="Coin3" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1480, 580 )
-
-[node name="Coin4" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 1860, 460 )
-
-[node name="Coin5" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 2240, 460 )
-
-[node name="Coin6" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 3340, 300 )
-
-[node name="Coin7" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 3160, 370 )
-
-[node name="Coin8" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 3520, 240 )
-
-[node name="Coin9" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 3990, 430 )
-
-[node name="Coin10" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 4110, 410 )
-
-[node name="Coin11" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 4240, 390 )
-
-[node name="Coin12" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 4360, 380 )
-
-[node name="Coin13" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 5200, 620 )
-
-[node name="Coin14" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 5200, 520 )
-
-[node name="Coin15" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 5200, 420 )
-
-[node name="Coin16" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 5200, 320 )
-
-[node name="Coin17" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 6650, 460 )
-
-[node name="Coin18" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 6530, 390 )
-
-[node name="Coin19" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 6700, 170 )
-
-[node name="Coin20" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 6570, 50 )
-
-[node name="Coin21" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 6210, -180 )
-
-[node name="Coin22" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 6320, -180 )
-
-[node name="Coin23" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 6210, -80 )
-
-[node name="Coin24" parent="Coins" instance=ExtResource( 7 )]
-position = Vector2( 6320, -80 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
