@@ -99,6 +99,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+speed = Vector2( 450, 1000 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

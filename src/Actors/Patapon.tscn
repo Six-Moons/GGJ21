@@ -42,9 +42,8 @@ tracks/0/keys = {
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 5
-frame = 14
 
 [node name="AnimationPlayer" parent="." index="4"]
+autoplay = "Run"
 anims/Hit = SubResource( 1 )
 anims/Run = SubResource( 2 )
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
