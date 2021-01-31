@@ -1,6 +1,8 @@
 extends Actor
 
 export var stomp_impulse: = 600.0
+export var lives := 2
+var hurt := false
 
 func _on_StompDetector_area_entered(area: Area2D) -> void:
 	if !area.get_parent().is_dead():
@@ -8,7 +10,11 @@ func _on_StompDetector_area_entered(area: Area2D) -> void:
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
 	if !body.is_dead():
-		die()
+		if lives > 0:
+			lives -= 1
+			hurt = true
+		else:
+			die()
 
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
@@ -19,8 +25,10 @@ func _physics_process(delta: float) -> void:
 	_velocity = move_and_slide_with_snap(
 		_velocity, snap, FLOOR_NORMAL, true
 	)
-
-	if is_on_floor():
+	if hurt:
+		$AnimationPlayer.play("Hurt_right")
+		hurt = false
+	elif is_on_floor():
 		if direction.x != 0:
 			if direction.x < 0:
 				$Sprite.set_flip_h( true )
