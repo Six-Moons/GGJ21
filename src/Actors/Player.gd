@@ -3,7 +3,8 @@ extends Actor
 export var stomp_impulse: = 600.0
 
 func _on_StompDetector_area_entered(area: Area2D) -> void:
-	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
+	if !area.get_parent().is_dead():
+		_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
 	if !body.is_dead():
