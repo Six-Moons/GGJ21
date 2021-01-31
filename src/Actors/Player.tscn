@@ -117,7 +117,7 @@ texture = ExtResource( 2 )
 offset = Vector2( 0, -20 )
 vframes = 5
 hframes = 3
-frame = 12
+frame = 1
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
 position = Vector2( 2, -20 )
