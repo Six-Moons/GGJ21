@@ -1,19 +1,19 @@
 [gd_resource type="TileSet" load_steps=4 format=2]
 
-[ext_resource path="res://assets/BARDA.png" type="Texture" id=1]
+[ext_resource path="res://assets/BLOQUES.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 0, 7.62939e-06, 16, 7.62939e-06, 16, 14, 0, 14 )
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 16, 14, 0, 14, 0, 7.62939e-06, 16, 7.62939e-06 )
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [resource]
-0/name = "barda full collision"
+0/name = "BLOQUE COLLISION"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 16, 67, 16, 14 )
+0/region = Rect2( 0, 0, 64, 64 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
@@ -30,11 +30,11 @@ points = PoolVector2Array( 16, 14, 0, 14, 0, 7.62939e-06, 16, 7.62939e-06 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
-1/name = "barda no collision"
+1/name = "BLOQUE NO COLLISION"
 1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 16, 81, 16, 14 )
+1/region = Rect2( 0, 64, 64, 64 )
 1/tile_mode = 0
 1/occluder_offset = Vector2( 0, 0 )
 1/navigation_offset = Vector2( 0, 0 )
