@@ -4,10 +4,10 @@
 [ext_resource path="res://assets/enemy.png" type="Texture" id=2]
 [ext_resource path="res://src/Actors/Light.tres" type="OccluderPolygon2D" id=3]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20.25, 20.25 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 30.5, 9.75 )
 
 [node name="Enemy" type="KinematicBody2D"]
@@ -28,14 +28,14 @@ occluder = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -20 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StompArea2D" type="Area2D" parent="."]
 position = Vector2( 0, -50 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompArea2D"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
 position = Vector2( 0, -33 )
@@ -46,3 +46,4 @@ physics_process_parent = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 method_call_mode = 1
 [connection signal="area_entered" from="StompArea2D" to="." method="_on_StompArea2D_area_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
