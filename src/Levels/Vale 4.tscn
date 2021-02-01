@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/bloques.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
@@ -8,8 +8,11 @@
 [ext_resource path="res://src/Actors/Patapon.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Levels/Level.gd" type="Script" id=9]
 
 [node name="Vale 2" type="Node2D"]
+script = ExtResource( 9 )
+scene_index = 4
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
