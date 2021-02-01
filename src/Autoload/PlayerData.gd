@@ -5,7 +5,7 @@ signal updated
 signal died
 signal reset
 
-var score: = 0 setget set_score
+var score: = 5 setget set_score
 var deaths: = 0 setget set_deaths
 
 
