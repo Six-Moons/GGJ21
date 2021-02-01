@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Objects/Coin.gd" type="Script" id=1]
-[ext_resource path="res://assets/coin.png" type="Texture" id=2]
+[ext_resource path="res://assets/estrellas/star.png" type="Texture" id=2]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( -0.179192, -34.5879, 13.9728, -31.4813, 26.0539, -22.1617, 32, -11.8665, 34.5106, 1.13745, 30.3685, 15.8073, 20.1859, 27.1979, 11.9018, 32.0304, 0.511131, 34.6192, -10.8796, 32.8933, -23.4783, 26.5076, -32.4528, 14.5992, -34.2071, 0.156757, -33.1432, -11.6339, -27.2752, -22.1617, -13.9861, -31.4813 )
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 33.0
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 17.0854, 16.4909 )
 
 [sub_resource type="Animation" id=3]
 length = 1.6
