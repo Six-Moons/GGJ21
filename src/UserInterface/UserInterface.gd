@@ -41,3 +41,8 @@ func set_paused(value: bool) -> void:
 	paused = value
 	scene_tree.paused = value
 	pause_overlay.visible = value
+
+
+func _on_Player_hit(lives):
+	$Health.set_hearts(lives)
+	pass # Replace with function body.

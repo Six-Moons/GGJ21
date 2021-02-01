@@ -45,3 +45,4 @@ position = Vector2( 3782, 670 )
 
 [node name="Pulpo4" parent="Enemies" index="10" instance=ExtResource( 2 )]
 position = Vector2( 3311.95, 981.479 )
+[connection signal="hit" from="Player" to="InterfaceLayer/UserInterface" method="_on_Player_hit"]

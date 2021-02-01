@@ -27,25 +27,7 @@ text = "Score: %s"
 align = 2
 valign = 1
 
-[node name="Lives" type="HBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Health" parent="Lives" instance=ExtResource( 7 )]
-margin_right = 18.0
-margin_bottom = 40.0
-
-[node name="Health2" parent="Lives" instance=ExtResource( 7 )]
-margin_left = 22.0
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="Health3" parent="Lives" instance=ExtResource( 7 )]
-margin_left = 44.0
-margin_right = 62.0
+[node name="Health" parent="." instance=ExtResource( 7 )]
 margin_bottom = 40.0
 
 [node name="PauseOverlay" type="ColorRect" parent="."]
