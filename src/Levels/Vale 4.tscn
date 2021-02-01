@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/bloques.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Levels/ParallaxBackground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Actors/Pulpo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Actors/Marcianito.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Actors/Patapon.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=8]
 
 [node name="Vale 2" type="Node2D"]
 
@@ -20,10 +21,6 @@ tile_data = PoolIntArray( 0, 0, 0, 65, 1, 0, 65536, 0, 0, 65601, 1, 0, 131072, 0
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 60.4214, 392.291 )
-
-[node name="Portal2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1906.18, 577.741 )
-next_scene = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -72,6 +69,9 @@ position = Vector2( 866.311, 603.046 )
 [node name="Pulpo5" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1895.59, 287.917 )
 
+[node name="Pulpo9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1654.31, 224.421 )
+
 [node name="Pulpo8" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1335.34, 607.928 )
 
@@ -95,3 +95,23 @@ position = Vector2( 1006.35, 188.698 )
 
 [node name="Pulpo7" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1108.42, 193.205 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
+offset = Vector2( 0, -424 )
+transform = Transform2D( 1, 0, 0, 1, 0, -424 )
+
+[node name="Coin" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1895.48, 487.102 )
+
+[node name="Coin2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1009.99, 56.1931 )
+
+[node name="Coin3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1391.76, 437.96 )
+
+[node name="Coin4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 676.747, 231.02 )
+
+[node name="Coin5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1635.37, 177.643 )
+[connection signal="hit" from="Player" to="CanvasLayer/UserInterface" method="_on_Player_hit"]

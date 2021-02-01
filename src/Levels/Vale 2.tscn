@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/bloques.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Actors/Pulpo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Actors/Marcianito.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Actors/Patapon.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Levels/ParallaxBackground.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=9]
 
 [node name="Vale 2" type="Node2D"]
 
@@ -20,10 +21,6 @@ tile_data = PoolIntArray( 0, 0, 0, 65, 1, 0, 65536, 0, 0, 65560, 536870924, 0, 6
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 79.4917, 472.81 )
-
-[node name="Portal2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1983.76, 113.871 )
-next_scene = null
 
 [node name="Marcianito" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1171.92, 161.27 )
@@ -67,3 +64,23 @@ position = Vector2( 1491.31, 610.45 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UserInterface" parent="CanvasLayer" instance=ExtResource( 7 )]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
+offset = Vector2( 0, -424 )
+transform = Transform2D( 1, 0, 0, 1, 0, -424 )
+
+[node name="Coin" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1983.04, 82.6543 )
+
+[node name="Coin2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1042.26, 63.0545 )
+
+[node name="Coin3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1947.41, 337.451 )
+
+[node name="Coin4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 431.678, 477.147 )
+
+[node name="Coin5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1053.85, 250.085 )
+[connection signal="hit" from="Player" to="CanvasLayer/UserInterface" method="_on_Player_hit"]

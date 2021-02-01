@@ -26,3 +26,5 @@ tile_data = PoolIntArray( 0, 0, 0, 135, 0, 0, 65536, 0, 0, 65671, 0, 0, 131072, 
 position = Vector2( 885.108, 800 )
 
 [node name="Enemies" type="Node2D" parent="."]
+
+[node name="Coins" type="Node2D" parent="."]
