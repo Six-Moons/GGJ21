@@ -11,15 +11,13 @@ var next_scene: = ""
 
 
 func reset():
-	self.score = 0
+	self.score = 5
 	self.deaths = 0
 	emit_signal("reset")
-
 
 func set_score(new_score: int) -> void:
 	score = new_score
 	emit_signal("updated")
-
 
 func set_deaths(new_value: int) -> void:
 	deaths = new_value

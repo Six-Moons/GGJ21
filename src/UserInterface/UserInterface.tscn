@@ -26,6 +26,9 @@ margin_bottom = 18.0
 text = "Score: %s"
 align = 2
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Health" parent="." instance=ExtResource( 7 )]
 margin_bottom = 40.0
