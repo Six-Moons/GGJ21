@@ -7,6 +7,7 @@ signal reset
 
 var score: = 5 setget set_score
 var deaths: = 0 setget set_deaths
+var next_scene: = ""
 
 
 func reset():
