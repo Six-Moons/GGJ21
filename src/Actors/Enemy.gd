@@ -2,7 +2,6 @@ extends Actor
 
 onready var stomp_area: Area2D = $StompArea2D
 
-export var score: = 100
 var dead = false
 
 func _ready() -> void:
@@ -29,7 +28,6 @@ func die() -> void:
 	$AnimationPlayer.play("Hit")
 	dead = true
 	_velocity.x = 0
-	PlayerData.score += score
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if $AnimationPlayer.assigned_animation == "Hit":
