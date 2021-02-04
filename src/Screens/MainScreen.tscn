@@ -17,9 +17,9 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 7
 texture = ExtResource( 2 )
 expand = true
-stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -44,12 +44,12 @@ __meta__ = {
 
 [node name="PlayButton" parent="Menu" instance=ExtResource( 4 )]
 margin_right = 234.0
-margin_bottom = 30.0
+margin_bottom = 33.0
 text = "Jugar"
 next_scene_path = "res://src/Levels/Level01.tscn"
 
 [node name="QuitButton" parent="Menu" instance=ExtResource( 5 )]
-margin_top = 38.0
+margin_top = 41.0
 margin_right = 234.0
-margin_bottom = 68.0
+margin_bottom = 74.0
 text = "Salir"
