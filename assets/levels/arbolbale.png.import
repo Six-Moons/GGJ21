@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/vmchikito.png-6bb7ebee0cad59a2c125980f4a08b3b0.stex"
+path="res://.import/arbolbale.png-03496d0317eb9a0f2bd77b8e3543a8e1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vmchikito.png"
-dest_files=[ "res://.import/vmchikito.png-6bb7ebee0cad59a2c125980f4a08b3b0.stex" ]
+source_file="res://assets/levels/arbolbale.png"
+dest_files=[ "res://.import/arbolbale.png-03496d0317eb9a0f2bd77b8e3543a8e1.stex" ]
 
 [params]
 

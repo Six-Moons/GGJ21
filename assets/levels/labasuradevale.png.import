@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arbolbale.png-d3e01867787acd4f937439794b56fc38.stex"
+path="res://.import/labasuradevale.png-ac9298019139cd9e95271054278715b9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/arbolbale.png"
-dest_files=[ "res://.import/arbolbale.png-d3e01867787acd4f937439794b56fc38.stex" ]
+source_file="res://assets/levels/labasuradevale.png"
+dest_files=[ "res://.import/labasuradevale.png-ac9298019139cd9e95271054278715b9.stex" ]
 
 [params]
 

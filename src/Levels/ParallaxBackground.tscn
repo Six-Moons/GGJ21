@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/fondo 3.png" type="Texture" id=1]
-[ext_resource path="res://assets/fondo 1.png" type="Texture" id=2]
-[ext_resource path="res://assets/fondo 2.png" type="Texture" id=3]
+[ext_resource path="res://assets/fondos/fondo 1.png" type="Texture" id=1]
+[ext_resource path="res://assets/fondos/fondo 2.png" type="Texture" id=2]
+[ext_resource path="res://assets/fondos/fondo 3.png" type="Texture" id=3]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
@@ -12,7 +12,7 @@ motion_mirroring = Vector2( 1280, 0 )
 
 [node name="Sprite" type="Sprite" parent="Cerros"]
 position = Vector2( 29.108, 304.185 )
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 centered = false
 
 [node name="Edificios atras" type="ParallaxLayer" parent="."]
@@ -21,7 +21,7 @@ motion_mirroring = Vector2( 1280, 0 )
 
 [node name="Sprite" type="Sprite" parent="Edificios atras"]
 position = Vector2( 24.1937, 310.54 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 centered = false
 
 [node name="Edificios Frente" type="ParallaxLayer" parent="."]
@@ -30,5 +30,5 @@ motion_mirroring = Vector2( 1280, 0 )
 
 [node name="Sprite" type="Sprite" parent="Edificios Frente"]
 position = Vector2( 66.4634, 310.162 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 centered = false
