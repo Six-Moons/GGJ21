@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Comenzar2.png-662278a47ab6377c0e1cf499c105048a.stex"
+path="res://.import/Chipichipi2.png-6f4def369b4af53df8dd88cb4a94ca74.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fondos/Comenzar2.png"
-dest_files=[ "res://.import/Comenzar2.png-662278a47ab6377c0e1cf499c105048a.stex" ]
+source_file="res://assets/fondos/titlescreen/Chipichipi2.png"
+dest_files=[ "res://.import/Chipichipi2.png-6f4def369b4af53df8dd88cb4a94ca74.stex" ]
 
 [params]
 
