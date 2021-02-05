@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://src/Objects/Coin.gd" type="Script" id=1]
+[ext_resource path="res://src/Objects/Star.gd" type="Script" id=1]
 [ext_resource path="res://assets/estrellas/star.png" type="Texture" id=2]
 
 [sub_resource type="OccluderPolygon2D" id=1]
@@ -78,10 +78,13 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Coin" type="Area2D"]
+[node name="Star" type="Area2D"]
 monitorable = false
 collision_layer = 8
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

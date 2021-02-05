@@ -7,7 +7,7 @@
 [ext_resource path="res://src/Actors/Marcianito.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Actors/Patapon.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Objects/Star.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Levels/Level.gd" type="Script" id=9]
 
 [node name="Vale 2" type="Node2D"]
@@ -105,20 +105,20 @@ position = Vector2( 1006.35, 188.698 )
 [node name="Pulpo7" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 1108.42, 193.205 )
 
-[node name="Coins" type="Node2D" parent="."]
+[node name="Stars" type="Node2D" parent="."]
 
-[node name="Coin" parent="Coins" instance=ExtResource( 8 )]
+[node name="Star" parent="Stars" instance=ExtResource( 8 )]
 position = Vector2( 1895.48, 487.102 )
 
-[node name="Coin2" parent="Coins" instance=ExtResource( 8 )]
+[node name="Star2" parent="Stars" instance=ExtResource( 8 )]
 position = Vector2( 1009.99, 56.1931 )
 
-[node name="Coin3" parent="Coins" instance=ExtResource( 8 )]
+[node name="Star3" parent="Stars" instance=ExtResource( 8 )]
 position = Vector2( 1391.76, 437.96 )
 
-[node name="Coin4" parent="Coins" instance=ExtResource( 8 )]
+[node name="Star4" parent="Stars" instance=ExtResource( 8 )]
 position = Vector2( 676.747, 231.02 )
 
-[node name="Coin5" parent="Coins" instance=ExtResource( 8 )]
+[node name="Star5" parent="Stars" instance=ExtResource( 8 )]
 position = Vector2( 1635.37, 177.643 )
 [connection signal="hit" from="Player" to="CanvasLayer/UserInterface" method="_on_Player_hit"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/tilesets/bloques.tres" type="TileSet" id=3]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Objects/Star.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Levels/ParallaxBackground.tscn" type="PackedScene" id=6]
 
 [node name="LevelTemplate" type="Node2D"]
@@ -29,4 +30,20 @@ position = Vector2( 885.108, 800 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Coins" type="Node2D" parent="."]
+[node name="Stars" type="Node2D" parent="."]
+position = Vector2( -80.1809, -53.4539 )
+
+[node name="Star" parent="Stars" instance=ExtResource( 5 )]
+position = Vector2( 1603.27, 966.726 )
+
+[node name="Star2" parent="Stars" instance=ExtResource( 5 )]
+position = Vector2( 1013.18, 1034.86 )
+
+[node name="Star3" parent="Stars" instance=ExtResource( 5 )]
+position = Vector2( 909.837, 970.711 )
+
+[node name="Star4" parent="Stars" instance=ExtResource( 5 )]
+position = Vector2( 1105.83, 1022.38 )
+
+[node name="Star5" parent="Stars" instance=ExtResource( 5 )]
+position = Vector2( 1289.36, 1020.6 )
