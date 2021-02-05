@@ -8,13 +8,15 @@ func _on_body_entered(body: PhysicsBody2D) -> void:
 	picked()
 
 func picked() -> void:
-	PlayerData.score += score
 	anim_player.play("picked")
+	PlayerData.score += score
+	if PlayerData.score <= 0:
+		finish()
 	
 func finish() -> void:
-	if PlayerData.score == 0:
-		get_tree().paused = true
-		anim_player.play("fade_out")
-		yield(anim_player, "animation_finished")
-		get_tree().paused = false
-#		get_tree().change_scene_to(PlayerData.next_scene)
+	get_tree().paused = true
+#	anim_player.play("fade_out")
+#	yield(anim_player, "animation_finished")
+	get_tree().paused = false
+	PlayerData.reset()
+	get_tree().change_scene(PlayerData.next_scene)

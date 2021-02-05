@@ -5,11 +5,11 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
-export (int) var scene_index = 1 
+export(String, FILE) var next_scene_path: = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	PlayerData.change_scene(scene_index)
+	PlayerData.change_scene(next_scene_path)
 	pass # Replace with function body.
 
 
