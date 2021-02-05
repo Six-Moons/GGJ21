@@ -11,7 +11,7 @@ motion_scale = Vector2( 0.98, 1 )
 motion_mirroring = Vector2( 1280, 0 )
 
 [node name="Sprite" type="Sprite" parent="Cerros"]
-position = Vector2( 29.108, 304.185 )
+position = Vector2( 0, 310 )
 texture = ExtResource( 3 )
 centered = false
 
@@ -20,7 +20,7 @@ motion_scale = Vector2( 0.96, 1 )
 motion_mirroring = Vector2( 1280, 0 )
 
 [node name="Sprite" type="Sprite" parent="Edificios atras"]
-position = Vector2( 24.1937, 310.54 )
+position = Vector2( 0, 310 )
 texture = ExtResource( 2 )
 centered = false
 
@@ -29,6 +29,6 @@ motion_scale = Vector2( 0.87, 1 )
 motion_mirroring = Vector2( 1280, 0 )
 
 [node name="Sprite" type="Sprite" parent="Edificios Frente"]
-position = Vector2( 66.4634, 310.162 )
+position = Vector2( 0, 310 )
 texture = ExtResource( 1 )
 centered = false
