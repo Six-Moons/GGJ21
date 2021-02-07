@@ -4,7 +4,6 @@
 [ext_resource path="res://assets/toldo/theme/button_normal.tres" type="StyleBox" id=2]
 [ext_resource path="res://assets/toldo/theme/button_pressed.tres" type="StyleBox" id=3]
 
-
 [resource]
 default_font = ExtResource( 1 )
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )

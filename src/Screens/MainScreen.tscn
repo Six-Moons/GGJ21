@@ -19,7 +19,7 @@
 [ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/ComenzarHover3.png" type="Texture" id=20]
 [ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/ComenzarSelec3.png" type="Texture" id=21]
 
-[sub_resource type="AnimatedTexture" id=2]
+[sub_resource type="AnimatedTexture" id=1]
 frames = 3
 frame_0/texture = ExtResource( 12 )
 frame_1/texture = ExtResource( 13 )
@@ -27,7 +27,7 @@ frame_1/delay_sec = 0.0
 frame_2/texture = ExtResource( 14 )
 frame_2/delay_sec = 0.0
 
-[sub_resource type="AnimatedTexture" id=3]
+[sub_resource type="AnimatedTexture" id=2]
 frames = 3
 frame_0/texture = ExtResource( 10 )
 frame_1/texture = ExtResource( 7 )
@@ -35,7 +35,7 @@ frame_1/delay_sec = 0.0
 frame_2/texture = ExtResource( 11 )
 frame_2/delay_sec = 0.0
 
-[sub_resource type="AnimatedTexture" id=4]
+[sub_resource type="AnimatedTexture" id=3]
 frames = 3
 frame_0/texture = ExtResource( 3 )
 frame_1/texture = ExtResource( 9 )
@@ -43,7 +43,7 @@ frame_1/delay_sec = 0.0
 frame_2/texture = ExtResource( 8 )
 frame_2/delay_sec = 0.0
 
-[sub_resource type="AnimatedTexture" id=5]
+[sub_resource type="AnimatedTexture" id=4]
 frames = 3
 frame_0/texture = ExtResource( 18 )
 frame_1/texture = ExtResource( 16 )
@@ -51,7 +51,7 @@ frame_1/delay_sec = 0.0
 frame_2/texture = ExtResource( 21 )
 frame_2/delay_sec = 0.0
 
-[sub_resource type="AnimatedTexture" id=6]
+[sub_resource type="AnimatedTexture" id=5]
 frames = 3
 frame_0/texture = ExtResource( 17 )
 frame_1/texture = ExtResource( 19 )
@@ -73,7 +73,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 83.0
-texture = SubResource( 2 )
+texture = SubResource( 1 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
@@ -82,7 +82,7 @@ __meta__ = {
 [node name="Title" type="TextureRect" parent="."]
 anchor_right = 1.0
 margin_bottom = 198.0
-texture = SubResource( 3 )
+texture = SubResource( 2 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -96,9 +96,9 @@ anchor_right = 0.955429
 anchor_bottom = 0.949506
 margin_left = -190.0
 margin_top = -60.0
-texture_normal = SubResource( 4 )
-texture_pressed = SubResource( 5 )
-texture_hover = SubResource( 6 )
+texture_normal = SubResource( 3 )
+texture_pressed = SubResource( 4 )
+texture_hover = SubResource( 5 )
 expand = true
 script = ExtResource( 4 )
 __meta__ = {

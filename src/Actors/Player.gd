@@ -3,8 +3,9 @@ extends Actor
 signal hit
 
 export var stomp_impulse: = 600.0
-export var lives := 2
+export var lives := 3
 var hurt := false
+var curr_animation = "Idle"
 
 func _ready():
 	speed = Vector2(365, 730)
@@ -14,13 +15,14 @@ func _on_StompDetector_area_entered(area: Area2D) -> void:
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
-	if !body.is_dead():
-		emit_signal("hit", lives)
+	if !body.is_dead() and !hurt:
+		$AnimationPlayer.play("Hurt")
 		if lives > 0:
 			lives -= 1
 			hurt = true
 		else:
 			die()
+		emit_signal("hit", lives)
 
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
@@ -31,24 +33,23 @@ func _physics_process(delta: float) -> void:
 	_velocity = move_and_slide_with_snap(
 		_velocity, snap, FLOOR_NORMAL, true
 	)
-	if hurt:
-		$AnimationPlayer.play("Hurt_right")
-		hurt = false
-	elif is_on_floor():
+	
+	if is_on_floor():
 		if direction.x != 0:
 			if direction.x < 0:
 				$Sprite.set_flip_h( true )
 			else:
 				$Sprite.set_flip_h( false )
-			
-			$AnimationPlayer.play("Run_right")
+			curr_animation = "Run"
 		else:
-			$AnimationPlayer.play("Idle_right")
+			curr_animation = "Idle"
 	else:
 		if _velocity.y < 0:
-			$AnimationPlayer.play("Jump_right")
+			curr_animation = "Jump"
 		else:
-			$AnimationPlayer.play("Fall")
+			curr_animation = "Fall"
+	if !hurt:
+		$AnimationPlayer.play(curr_animation)
 
 func get_direction() -> Vector2:
 	return Vector2(
@@ -70,12 +71,15 @@ func calculate_move_velocity(
 		velocity.y = 0.0
 	return velocity
 
-
 func calculate_stomp_velocity(linear_velocity: Vector2, stomp_impulse: float) -> Vector2:
 	var stomp_jump: = -speed.y if Input.is_action_pressed("jump") else -stomp_impulse
 	return Vector2(linear_velocity.x, stomp_jump)
 
-
 func die() -> void:
 	PlayerData.deaths += 1
 	queue_free()
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Hurt":
+		hurt = false
+	pass # Replace with function body.

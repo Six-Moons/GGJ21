@@ -31,6 +31,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=5]
+resource_name = "Hurt"
 length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -39,13 +40,26 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 0, 1, 0, 1, 0 ]
+"values": [ false, true, false, true, false, true ]
 }
 
 [sub_resource type="Animation" id=6]
+resource_name = "Idle"
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -62,6 +76,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=7]
+resource_name = "Jump"
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -78,6 +93,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=8]
+resource_name = "Run"
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -120,7 +136,7 @@ texture = ExtResource( 2 )
 offset = Vector2( 0, -20 )
 vframes = 5
 hframes = 3
-frame = 1
+frame = 4
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
 position = Vector2( 2, -20 )
@@ -147,11 +163,13 @@ modulate = Color( 0.337255, 0.223529, 1, 1 )
 shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Idle_right"
+autoplay = "Idle"
+method_call_mode = 1
 anims/Fall = SubResource( 4 )
-anims/Hurt_right = SubResource( 5 )
-anims/Idle_right = SubResource( 6 )
-anims/Jump_right = SubResource( 7 )
-anims/Run_right = SubResource( 8 )
+anims/Hurt = SubResource( 5 )
+anims/Idle = SubResource( 6 )
+anims/Jump = SubResource( 7 )
+anims/Run = SubResource( 8 )
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
 [connection signal="area_entered" from="StompDetector" to="." method="_on_StompDetector_area_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
