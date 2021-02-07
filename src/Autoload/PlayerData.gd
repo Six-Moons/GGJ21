@@ -1,6 +1,5 @@
 extends Node
 
-
 signal updated
 signal died
 signal reset
