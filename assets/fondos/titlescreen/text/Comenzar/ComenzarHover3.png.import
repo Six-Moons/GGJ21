@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Comenzar3.png-19584b21439683c65b6921ad85ccdfd8.stex"
+path="res://.import/ComenzarHover3.png-2aeb736fc304dbfa43b401ba24b7f8d4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fondos/titlescreen/text/Comenzar3.png"
-dest_files=[ "res://.import/Comenzar3.png-19584b21439683c65b6921ad85ccdfd8.stex" ]
+source_file="res://assets/fondos/titlescreen/text/Comenzar/ComenzarHover3.png"
+dest_files=[ "res://.import/ComenzarHover3.png-2aeb736fc304dbfa43b401ba24b7f8d4.stex" ]
 
 [params]
 

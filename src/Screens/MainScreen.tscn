@@ -1,40 +1,36 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
-[ext_resource path="res://assets/fondos/titlescreen/TITLESCR3.png" type="Texture" id=2]
-[ext_resource path="res://assets/fondos/titlescreen/text/Comenzar1.png" type="Texture" id=3]
+[ext_resource path="res://assets/fondos/titlescreen/background.png" type="Texture" id=2]
+[ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/Comenzar1.png" type="Texture" id=3]
 [ext_resource path="res://src/Screens/TextureButton.gd" type="Script" id=4]
-[ext_resource path="res://assets/fondos/titlescreen/TITLESCR1.png" type="Texture" id=5]
-[ext_resource path="res://assets/fondos/titlescreen/TITLESCR2.png" type="Texture" id=6]
+[ext_resource path="res://assets/fondos/titlescreen/lluvia2.png" type="Texture" id=5]
+[ext_resource path="res://assets/fondos/titlescreen/lluvia1.png" type="Texture" id=6]
 [ext_resource path="res://assets/fondos/titlescreen/text/Title2.png" type="Texture" id=7]
-[ext_resource path="res://assets/fondos/titlescreen/text/Comenzar3.png" type="Texture" id=8]
-[ext_resource path="res://assets/fondos/titlescreen/text/Comenzar2.png" type="Texture" id=9]
+[ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/Comenzar3.png" type="Texture" id=8]
+[ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/Comenzar2.png" type="Texture" id=9]
 [ext_resource path="res://assets/fondos/titlescreen/text/Title1.png" type="Texture" id=10]
 [ext_resource path="res://assets/fondos/titlescreen/text/Title3.png" type="Texture" id=11]
 [ext_resource path="res://assets/fondos/titlescreen/Rocket1.png" type="Texture" id=12]
 [ext_resource path="res://assets/fondos/titlescreen/Rocket2.png" type="Texture" id=13]
 [ext_resource path="res://assets/fondos/titlescreen/Rocket3.png" type="Texture" id=14]
-[ext_resource path="res://assets/fondos/titlescreen/Chipichipi3.png" type="Texture" id=15]
-[ext_resource path="res://assets/fondos/titlescreen/Chipichipi2.png" type="Texture" id=16]
-[ext_resource path="res://assets/fondos/titlescreen/Chipichipi1.png" type="Texture" id=17]
+[ext_resource path="res://assets/fondos/titlescreen/lluvia3.png" type="Texture" id=15]
+[ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/ComenzarSelec2.png" type="Texture" id=16]
+[ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/ComenzarHover1.png" type="Texture" id=17]
+[ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/ComenzarSelec1.png" type="Texture" id=18]
+[ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/ComenzarHover2.png" type="Texture" id=19]
+[ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/ComenzarHover3.png" type="Texture" id=20]
+[ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/ComenzarSelec3.png" type="Texture" id=21]
 
 [sub_resource type="AnimatedTexture" id=1]
 frames = 3
-frame_0/texture = ExtResource( 5 )
-frame_1/texture = ExtResource( 6 )
-frame_1/delay_sec = 0.0
-frame_2/texture = ExtResource( 2 )
-frame_2/delay_sec = 0.0
-
-[sub_resource type="AnimatedTexture" id=5]
-frames = 3
-frame_0/texture = ExtResource( 17 )
-frame_1/texture = ExtResource( 16 )
+frame_0/texture = ExtResource( 6 )
+frame_1/texture = ExtResource( 5 )
 frame_1/delay_sec = 0.0
 frame_2/texture = ExtResource( 15 )
 frame_2/delay_sec = 0.0
 
-[sub_resource type="AnimatedTexture" id=4]
+[sub_resource type="AnimatedTexture" id=2]
 frames = 3
 frame_0/texture = ExtResource( 12 )
 frame_1/texture = ExtResource( 13 )
@@ -50,13 +46,28 @@ frame_1/delay_sec = 0.0
 frame_2/texture = ExtResource( 11 )
 frame_2/delay_sec = 0.0
 
-[sub_resource type="AnimatedTexture" id=2]
+[sub_resource type="AnimatedTexture" id=4]
 frames = 3
-fps = 8.0
 frame_0/texture = ExtResource( 3 )
 frame_1/texture = ExtResource( 9 )
 frame_1/delay_sec = 0.0
 frame_2/texture = ExtResource( 8 )
+frame_2/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=5]
+frames = 3
+frame_0/texture = ExtResource( 18 )
+frame_1/texture = ExtResource( 16 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 21 )
+frame_2/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=6]
+frames = 3
+frame_0/texture = ExtResource( 17 )
+frame_1/texture = ExtResource( 19 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 20 )
 frame_2/delay_sec = 0.0
 
 [node name="MainScreen" type="Control"]
@@ -68,21 +79,19 @@ __meta__ = {
 }
 
 [node name="Background" type="TextureRect" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-size_flags_horizontal = 7
-texture = SubResource( 1 )
+texture = ExtResource( 2 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background2" type="TextureRect" parent="."]
+[node name="Lines" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource( 5 )
-stretch_mode = 1
+texture = SubResource( 1 )
+stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -91,7 +100,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 83.0
-texture = SubResource( 4 )
+texture = SubResource( 2 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
@@ -114,7 +123,9 @@ anchor_right = 0.955429
 anchor_bottom = 0.949506
 margin_left = -190.0
 margin_top = -60.0
-texture_normal = SubResource( 2 )
+texture_normal = SubResource( 4 )
+texture_pressed = SubResource( 5 )
+texture_hover = SubResource( 6 )
 expand = true
 script = ExtResource( 4 )
 __meta__ = {

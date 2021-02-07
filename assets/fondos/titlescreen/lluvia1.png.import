@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TITLESCR2.png-202e90664ecad83e48182dc6b544a399.stex"
+path="res://.import/lluvia1.png-e20d5cadbe128176f1a9e731e6e79ef8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fondos/titlescreen/TITLESCR2.png"
-dest_files=[ "res://.import/TITLESCR2.png-202e90664ecad83e48182dc6b544a399.stex" ]
+source_file="res://assets/fondos/titlescreen/lluvia1.png"
+dest_files=[ "res://.import/lluvia1.png-e20d5cadbe128176f1a9e731e6e79ef8.stex" ]
 
 [params]
 

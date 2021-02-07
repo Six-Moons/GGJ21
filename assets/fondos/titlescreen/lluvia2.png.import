@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Chipichipi1.png-0bb495654d107bcfb01d10d2cbd2433b.stex"
+path="res://.import/lluvia2.png-a6f9cc7e53a44e6b4ec85f0f93722c24.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fondos/titlescreen/Chipichipi1.png"
-dest_files=[ "res://.import/Chipichipi1.png-0bb495654d107bcfb01d10d2cbd2433b.stex" ]
+source_file="res://assets/fondos/titlescreen/lluvia2.png"
+dest_files=[ "res://.import/lluvia2.png-a6f9cc7e53a44e6b4ec85f0f93722c24.stex" ]
 
 [params]
 
