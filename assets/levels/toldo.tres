@@ -10,7 +10,6 @@
 [ext_resource path="res://assets/toldo/toldo7-9.png" type="Texture" id=8]
 
 [resource]
-flags = 4
 frames = 14
 frame_0/texture = ExtResource( 5 )
 frame_1/texture = ExtResource( 1 )
