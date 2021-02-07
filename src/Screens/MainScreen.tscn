@@ -1,11 +1,9 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
-[ext_resource path="res://assets/fondos/titlescreen/background.png" type="Texture" id=2]
+[ext_resource path="res://src/Screens/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/Comenzar1.png" type="Texture" id=3]
 [ext_resource path="res://src/Screens/TextureButton.gd" type="Script" id=4]
-[ext_resource path="res://assets/fondos/titlescreen/lluvia2.png" type="Texture" id=5]
-[ext_resource path="res://assets/fondos/titlescreen/lluvia1.png" type="Texture" id=6]
 [ext_resource path="res://assets/fondos/titlescreen/text/Title2.png" type="Texture" id=7]
 [ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/Comenzar3.png" type="Texture" id=8]
 [ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/Comenzar2.png" type="Texture" id=9]
@@ -14,21 +12,12 @@
 [ext_resource path="res://assets/fondos/titlescreen/Rocket1.png" type="Texture" id=12]
 [ext_resource path="res://assets/fondos/titlescreen/Rocket2.png" type="Texture" id=13]
 [ext_resource path="res://assets/fondos/titlescreen/Rocket3.png" type="Texture" id=14]
-[ext_resource path="res://assets/fondos/titlescreen/lluvia3.png" type="Texture" id=15]
 [ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/ComenzarSelec2.png" type="Texture" id=16]
 [ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/ComenzarHover1.png" type="Texture" id=17]
 [ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/ComenzarSelec1.png" type="Texture" id=18]
 [ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/ComenzarHover2.png" type="Texture" id=19]
 [ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/ComenzarHover3.png" type="Texture" id=20]
 [ext_resource path="res://assets/fondos/titlescreen/text/Comenzar/ComenzarSelec3.png" type="Texture" id=21]
-
-[sub_resource type="AnimatedTexture" id=1]
-frames = 3
-frame_0/texture = ExtResource( 6 )
-frame_1/texture = ExtResource( 5 )
-frame_1/delay_sec = 0.0
-frame_2/texture = ExtResource( 15 )
-frame_2/delay_sec = 0.0
 
 [sub_resource type="AnimatedTexture" id=2]
 frames = 3
@@ -78,23 +67,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 2 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Lines" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = SubResource( 1 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Background" parent="." instance=ExtResource( 2 )]
 
 [node name="Rocket" type="TextureRect" parent="."]
 anchor_right = 1.0
