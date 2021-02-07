@@ -7,7 +7,7 @@ onready var pause_overlay: ColorRect = $PauseOverlay
 onready var title_label: Label = $PauseOverlay/Title
 onready var main_screen_button: Button = $PauseOverlay/PauseMenu/MainScreenButton
 
-const MESSAGE_DIED: = "You died"
+const MESSAGE_DIED: = "Moriste :(("
 
 var paused: = false setget set_paused
 
