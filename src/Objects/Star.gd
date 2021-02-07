@@ -1,16 +1,17 @@
 extends Area2D
 
 onready var anim_player: AnimationPlayer = $AnimationPlayer
-
-export var score: = -1
+var picked_by = false
 
 func _on_body_entered(body: PhysicsBody2D) -> void:
-	picked()
+	if !picked_by:
+		picked()
+		picked_by = true
 
 func picked() -> void:
 	anim_player.play("picked")
-	PlayerData.score += score
-	if PlayerData.score <= 0:
+	PlayerData.stars -= 1
+	if PlayerData.stars <= 0:
 		finish()
 	
 func finish() -> void:

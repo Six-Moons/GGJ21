@@ -19,11 +19,11 @@ __meta__ = {
 }
 
 [node name="Score" type="Label" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
+anchor_left = 0.99
+anchor_right = 0.99
 margin_left = -200.0
-margin_bottom = 18.0
-text = "Score: %s"
+margin_bottom = 21.0
+text = "Estrellas Restantes: %s"
 align = 2
 valign = 1
 __meta__ = {
@@ -41,7 +41,6 @@ mouse_filter = 2
 color = Color( 0, 0, 0, 0.321569 )
 
 [node name="Title" parent="PauseOverlay" instance=ExtResource( 3 )]
-margin_right = 0.0
 margin_bottom = 57.0
 text = "Paused"
 
