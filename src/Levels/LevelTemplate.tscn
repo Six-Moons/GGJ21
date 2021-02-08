@@ -61,3 +61,4 @@ position = Vector2( 2128.18, 757.454 )
 
 [node name="Star5" parent="Stars" instance=ExtResource( 5 )]
 position = Vector2( 1872.18, 565.454 )
+[connection signal="died" from="Player" to="InterfaceLayer/UserInterface" method="_on_Player_died"]

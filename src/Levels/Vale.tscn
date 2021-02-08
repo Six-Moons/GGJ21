@@ -16,16 +16,16 @@ tile_data = PoolIntArray( -524288, 0, 0, -524229, 0, 0, -458752, 0, 0, -458693, 
 position = Vector2( 96, 640 )
 speed = Vector2( 400, 1300 )
 
-[node name="Patapon" parent="Enemies" index="0" instance=ExtResource( 2 )]
+[node name="Patapon" parent="Enemies" index="0"]
 position = Vector2( 352, 736 )
 
 [node name="Patapon4" parent="Enemies" index="1" instance=ExtResource( 2 )]
 position = Vector2( 800, 288 )
 
-[node name="Marcianito" parent="Enemies" index="2" instance=ExtResource( 4 )]
+[node name="Marcianito" parent="Enemies" index="2"]
 position = Vector2( 524.631, 488.643 )
 
-[node name="Pulpo" parent="Enemies" index="3" instance=ExtResource( 3 )]
+[node name="Pulpo" parent="Enemies" index="3"]
 position = Vector2( 960, 736 )
 
 [node name="Patapon2" parent="Enemies" index="4" instance=ExtResource( 2 )]

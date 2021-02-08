@@ -1,10 +1,12 @@
 extends Actor
 
 signal hit
+signal died
 
 export var stomp_impulse: = 600.0
 export var lives := 3
 var hurt := false
+var dead := false
 var curr_animation = "Idle"
 
 func _ready():
@@ -16,47 +18,50 @@ func _on_StompDetector_area_entered(area: Area2D) -> void:
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
 	if !body.is_dead() and !hurt:
-		$AnimationPlayer.play("Hurt")
 		if lives > 0:
 			lives -= 1
 			hurt = true
-		else:
-			die()
+			if lives <= 0:
+				dead = true
+				$AnimationPlayer.play("Die")
+			else:
+				$AnimationPlayer.play("Hurt")
 		emit_signal("hit", lives)
 
 func _physics_process(delta: float) -> void:
-	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
-	var direction: = get_direction()
-	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
-	var snap: Vector2 = Vector2.DOWN * 60.0 if direction.y == 0.0 else Vector2.ZERO
+	if !dead:
+		var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
+		var direction: = get_direction()
+		_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
+		var snap: Vector2 = Vector2.DOWN * 60.0 if direction.y == 0.0 else Vector2.ZERO
 	
-	_velocity = move_and_slide_with_snap(
-		_velocity, snap, FLOOR_NORMAL, true
-	)
+		_velocity = move_and_slide_with_snap(
+			_velocity, snap, FLOOR_NORMAL, true
+		)
 	
-	if is_on_floor():
-		if direction.x != 0:
-			if direction.x < 0:
-				$Sprite.set_flip_h( true )
+		if is_on_floor():
+			if direction.x != 0:
+				if direction.x < 0:
+					$Sprite.set_flip_h( true )
+				else:
+					$Sprite.set_flip_h( false )
+				curr_animation = "Run"
 			else:
-				$Sprite.set_flip_h( false )
-			curr_animation = "Run"
+				curr_animation = "Idle"
 		else:
-			curr_animation = "Idle"
-	else:
-		if _velocity.y < 0:
-			curr_animation = "Jump"
-		else:
-			curr_animation = "Fall"
-	if !hurt:
-		$AnimationPlayer.play(curr_animation)
+			if _velocity.y < 0:
+				curr_animation = "Jump"
+			else:
+				curr_animation = "Fall"
+		if !hurt:
+			$AnimationPlayer.play(curr_animation)
 
 func get_direction() -> Vector2:
 	return Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		-Input.get_action_strength("jump") if is_on_floor() and Input.is_action_just_pressed("jump") else 0.0
 	)
-#calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
+
 func calculate_move_velocity(
 		linear_velocity: Vector2,
 		direction: Vector2,
@@ -76,10 +81,13 @@ func calculate_stomp_velocity(linear_velocity: Vector2, stomp_impulse: float) ->
 	return Vector2(linear_velocity.x, stomp_jump)
 
 func die() -> void:
-	PlayerData.deaths += 1
+	emit_signal("died")
 	queue_free()
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "Hurt":
+	print(anim_name)
+	if anim_name == "Die":
+		die()
+	elif anim_name == "Hurt":
 		hurt = false
 	pass # Replace with function body.

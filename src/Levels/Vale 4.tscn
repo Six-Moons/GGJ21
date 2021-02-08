@@ -116,4 +116,5 @@ position = Vector2( 545.715, 472.925 )
 
 [node name="Star5" parent="Stars" instance=ExtResource( 8 )]
 position = Vector2( 1789.08, 238.119 )
+[connection signal="died" from="Player" to="CanvasLayer/UserInterface" method="_on_Player_died"]
 [connection signal="hit" from="Player" to="CanvasLayer/UserInterface" method="_on_Player_hit"]

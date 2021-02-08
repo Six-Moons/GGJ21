@@ -15,8 +15,8 @@ tile_data = PoolIntArray( -1048576, 0, 0, -1048439, 0, 0, -983040, 0, 0, -982903
 [node name="Player" parent="." index="3"]
 position = Vector2( 186.847, 699.024 )
 
-[node name="Marcianito" parent="Enemies" index="0" instance=ExtResource( 3 )]
-position = Vector2( 2144, 96 )
+[node name="Pulpo" parent="Enemies" index="0"]
+position = Vector2( 1120, 736 )
 
 [node name="Marcianito3" parent="Enemies" index="1" instance=ExtResource( 3 )]
 position = Vector2( 2752, 352 )
@@ -24,8 +24,8 @@ position = Vector2( 2752, 352 )
 [node name="Marcianito2" parent="Enemies" index="2" instance=ExtResource( 3 )]
 position = Vector2( 2229.36, 433.426 )
 
-[node name="Patapon" parent="Enemies" index="3" instance=ExtResource( 4 )]
-position = Vector2( 832, 128 )
+[node name="Marcianito" parent="Enemies" index="3"]
+position = Vector2( 2144, 96 )
 
 [node name="Patapon2" parent="Enemies" index="4" instance=ExtResource( 4 )]
 position = Vector2( 1664, 736 )
@@ -42,8 +42,8 @@ position = Vector2( 4000, 736 )
 [node name="Patapon6" parent="Enemies" index="8" instance=ExtResource( 4 )]
 position = Vector2( 3808, 736 )
 
-[node name="Pulpo" parent="Enemies" index="9" instance=ExtResource( 2 )]
-position = Vector2( 1120, 736 )
+[node name="Patapon" parent="Enemies" index="9"]
+position = Vector2( 832, 128 )
 
 [node name="Pulpo2" parent="Enemies" index="10" instance=ExtResource( 2 )]
 position = Vector2( 2496, 736 )

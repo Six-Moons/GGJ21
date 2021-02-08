@@ -12,7 +12,6 @@ var paused: = false setget set_paused
 
 func _ready() -> void:
 	PlayerData.connect("updated", self, "update_interface")
-	PlayerData.connect("died", self, "_on_Player_died")
 	PlayerData.connect("reset", self, "_on_Player_reset")
 	update_interface()
 
@@ -36,5 +35,6 @@ func set_paused(value: bool) -> void:
 	pause_overlay.visible = value
 
 func _on_Player_hit(lives):
+	print("Alo", lives)
 	$Health.set_hearts(lives)
 	pass # Replace with function body.
