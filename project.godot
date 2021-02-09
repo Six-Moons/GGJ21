@@ -20,9 +20,11 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GGJ2021"
+config/name="The Lost Star"
+config/description="¡Ayuda al detective Lost a encontrar las estrellas perdidas!"
 run/main_scene="res://src/Screens/MainScreen.tscn"
 config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
