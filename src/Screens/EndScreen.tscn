@@ -29,14 +29,24 @@ margin_left = -180.0
 margin_top = -75.0
 margin_right = 180.0
 margin_bottom = 79.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PlayButton" parent="Menu" instance=ExtResource( 5 )]
 margin_right = 360.0
-margin_bottom = 73.0
+margin_bottom = 46.0
 text = "Jugar de Nuevo"
 next_scene_path = "res://src/Screens/MainScreen.tscn"
 
 [node name="QuitButton" parent="Menu" instance=ExtResource( 7 )]
-margin_top = 81.0
+margin_top = 54.0
+margin_right = 360.0
+margin_bottom = 100.0
+
+[node name="CreditsButton" parent="Menu" instance=ExtResource( 5 )]
+margin_top = 108.0
 margin_right = 360.0
 margin_bottom = 154.0
+text = "Ver Créditos"
+next_scene_path = "res://src/Screens/Credits.tscn"

@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/font_text.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Screens/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/SceneChangeButton.tscn" type="PackedScene" id=4]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -301.0
+margin_top = -115.0
+margin_right = 293.0
+margin_bottom = 102.0
+color = Color( 0, 0, 0, 0.423529 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="." instance=ExtResource( 2 )]
+margin_bottom = 86.0
+text = "Creditos"
+
+[node name="Team" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -285.5
+margin_top = -99.0
+margin_right = 285.5
+margin_bottom = 99.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_text = "- Alejandra García: Programación y diseño de niveles
+- Alejandro Ortiz: Programación
+- Esaú Acuña: Arte
+- José Luis Flores: Narrativa y programación
+- Juan Francisco Barrón: Diseño
+- Nina Sepúlveda: Arte y Diseño
+- Valeria Lartigue: Arte y Diseño de niveles"
+text = "- Alejandra García: Programación y diseño de niveles
+- Alejandro Ortiz: Programación
+- Esaú Acuña: Arte
+- José Luis Flores: Narrativa y programación
+- Juan Francisco Barrón: Diseño
+- Nina Sepúlveda: Arte y Diseño
+- Valeria Lartigue: Arte y Diseño de niveles"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -235.0
+margin_top = -80.0
+margin_right = 235.0
+margin_bottom = -30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SceneChangeButton" parent="VBoxContainer" instance=ExtResource( 4 )]
+margin_right = 470.0
+margin_bottom = 50.0
+text = "Regresar a pantalla principal"
+next_scene_path = "res://src/Screens/MainScreen.tscn"
