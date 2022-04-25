@@ -14,21 +14,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Score" type="Label" parent="."]
-anchor_left = 0.99
-anchor_right = 0.99
-margin_left = -200.0
-margin_bottom = 21.0
+[node name="Score" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -224.0
+margin_bottom = 32.0
+color = Color( 0, 0, 0, 0.729412 )
+
+[node name="Label" type="Label" parent="Score"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -224.0
+margin_bottom = 32.0
 text = "Estrellas Restantes: %s"
-align = 2
+align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Health" parent="." instance=ExtResource( 7 )]
 margin_bottom = 40.0

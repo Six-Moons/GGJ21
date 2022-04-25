@@ -30,7 +30,7 @@ tile_data = PoolIntArray( -458752, 0, 0, -458687, 0, 0, -393216, 0, 0, -393151, 
 [node name="UserInterface" parent="CanvasLayer" instance=ExtResource( 7 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 64, 608 )
+position = Vector2( 96, 608 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
