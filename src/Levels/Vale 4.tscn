@@ -30,7 +30,7 @@ tile_data = PoolIntArray( -327625, 0, 0, -327615, 0, 0, -262089, 0, 0, -262079, 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 67.9809, 528.362 )
+position = Vector2( 64, 544 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -116,5 +116,6 @@ position = Vector2( 545.715, 472.925 )
 
 [node name="Star5" parent="Stars" instance=ExtResource( 8 )]
 position = Vector2( 1888, 160 )
+
 [connection signal="died" from="Player" to="CanvasLayer/UserInterface" method="_on_Player_died"]
 [connection signal="hit" from="Player" to="CanvasLayer/UserInterface" method="_on_Player_hit"]

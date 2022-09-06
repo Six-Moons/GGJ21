@@ -105,4 +105,5 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 next_scene_path = "res://src/Levels/Level01.tscn"
+
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]
