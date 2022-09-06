@@ -1,7 +1,7 @@
 extends Control
 
-var hearts = 4 setget set_hearts
-var max_hearts = 4 setget set_max_hearts
+export var hearts = 4 setget set_hearts
+export var max_hearts = 4 setget set_max_hearts
 var heartSize = 18
 
 onready var heartFull = $Full
@@ -11,7 +11,12 @@ onready var heartEmpty = $Empty
 func set_hearts(value):
 	hearts = clamp(value, 0, max_hearts)
 	if (heartFull != null):
-		heartFull.rect_size.x = hearts * heartSize
+		var heartsRectSize = hearts * heartSize
+		if heartsRectSize > 0:
+			heartFull.visible = true
+			heartFull.rect_size.x = hearts * heartSize
+		else:
+			heartFull.visible = false
 		if ($Timer.is_stopped()):
 			$Timer.start()
 
@@ -26,4 +31,9 @@ func _ready():
 
 func _on_Timer_timeout():
 	if (heartHalf != null):
-		heartHalf.rect_size.x = hearts * heartSize
+		var heartsRectSize = hearts * heartSize
+		if heartsRectSize > 0:
+			heartHalf.visible = true
+			heartHalf.rect_size.x = hearts * heartSize
+		else:
+			heartHalf.visible = false
